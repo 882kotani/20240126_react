@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "Material Symbols Outlined";
+  font-style: normal;
+  font-weight: 100 700;
+  src: url("https://fonts.gstatic.com/s/materialsymbolsoutlined/v138/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2")
+    format("woff2");
+}
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 45px;
+  color: rgba(16, 244, 217, 0.8);
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 998;
+}
+
+.material-symbols-outlined:hover {
+  cursor: pointer;
+}
+
+/* .container {
+  margin: 0 auto;
+  max-width: 1280px;
+  height: 100vh;
+  position: relative;
+} */
+/* .container header.blur { */
+.header.blur {
+  background-color: rgba(214, 211, 211, 0.8);
+  filter: blur(1px);
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  z-index: 999;
+}
+/* .container header { */
+.header {
+  background-color: #d6d3d3;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  z-index: 999;
+}
+/* .container header .wrap_header { */
+.header .wrap_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+}
+/* .container header .wrap_header .title { */
+.header .wrap_header .title {
+  display: none;
+}
+/* .container header .wrap_header .header_form { */
+.header .wrap_header .header_form {
+  min-width: auto;
+  min-height: 50px;
+  display: flex;
+}
+/* .container header .wrap_header .header_form .header_textarea { */
+.header .wrap_header .header_form .header_textarea {
+  outline: none;
+  width: auto;
+  height: auto;
+  border-radius: 4%;
+  border-color: #d6d3d3;
+}
+/* .container header .wrap_header .header_form .wrap_header_radio-btn { */
+.header .wrap_header .header_form .wrap_header_radio-btn {
+  min-width: auto;
+  height: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+/* .container header .wrap_header .header_form .btn_form:hover { */
+.header .wrap_header .header_form .btn_form:hover {
+  cursor: pointer;
+  background-color: rgba(244, 92, 92, 0.7);
+}
+/* .container header .wrap_header .header_form .btn_form { */
+.header .wrap_header .header_form .btn_form {
+  min-width: auto;
+  height: auto;
+  padding: 20px;
+  align-items: center;
+  background-color: #f45c5c;
+  color: white;
+  border-radius: 10%;
+  border-color: #d6d3d3;
+}
+
+/* .container main { */
+.box_main {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  justify-content: center;
+}
+/* .container main .src_before.after { */
+.box_main .src_before.after {
+  display: none;
+}
+/* .container main .img_box { */
+.box_main .img_box {
+  width: 100%;
+  height: 100%;
+}
+/* .container main .img_box #imageContainer { */
+.box_main .img_box #imageContainer {
+  width: auto;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+/* .container main .img_box #imageContainer .wrap_img { */
+.box_main .img_box #imageContainer .wrap_img {
+  width: auto;
+  height: auto;
+  position: relative;
+  margin: 5%;
+  overflow: hidden;
+}
+/* .container main .img_box #imageContainer .wrap_img .img_grid { */
+.box_main .img_box #imageContainer .wrap_img .img_grid {
+  max-width: 100%;
+  height: 100%;
+  aspect-ratio: 3/4;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+/* .container main .img_box #imageContainer .wrap_img .img_grid:hover { */
+.box_main .img_box #imageContainer .wrap_img .img_grid:hover {
+  opacity: 0.5;
+  transform: scale(1.3, 1.3);
+  transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  /* .container header .wrap_header .title { */
+  .header .wrap_header .title {
+    display: initial;
+  }
+  /* .container main .img_box #imageContainer { */
+  .box_main .img_box #imageContainer {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+} /*# sourceMappingURL=style.css.map */
