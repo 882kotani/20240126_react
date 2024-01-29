@@ -29,7 +29,7 @@
   cursor: pointer;
 }
 
-/* .container {
+/* #root {
   margin: 0 auto;
   max-width: 1280px;
   height: 100vh;
@@ -43,7 +43,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   z-index: 999;
 }
@@ -54,7 +54,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   z-index: 999;
 }
