@@ -1,9 +1,16 @@
 import React from "react";
+// import React, { forwardRef } from "react";
 import "../App.css";
 
-const Header = ({ search_img, display_img, handleKeyDown }) => {
+const Header = ({
+  search_img,
+  display_img,
+  handleKeyDown,
+  childref_header,
+}) => {
   return (
-    <div className="header">
+    // <div className="header">
+    <div ref={childref_header} className="header">
       <div className="wrap_header">
         <h1 className="title">画像検索</h1>
 

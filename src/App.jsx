@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useRef, useEffect } from "react";
 import "./App.css";
 import "./reset.css";
 import Header from "./components/Header.jsx";
@@ -28,6 +28,27 @@ function App() {
   //   //   header.classList.toggle("blur", true);
   //   // }
   // });
+
+  // function blur_scroll() {
+  const childref_header = useRef(null);
+  const childref_main = useRef(null);
+
+  const height_header = childref_header.clientHeight;
+  console.log(childref_header);
+  window.addEventListener("scroll", function () {
+    const scroll_top = window.pageYOffset;
+    // if (scroll_top <= height_header) {
+    if (scroll_top <= height_header) {
+      // childref_header.classList.toggle("blur", false);
+      childref_header.classList.add("blur");
+      console.log("scroll_top <= height_header");
+    } else if (height_header < scroll_top) {
+      // childref_main.classList.toggle("blur", true);
+      childref_header.classList.add("blur");
+      console.log("height_header < scroll_top");
+    }
+  });
+  // }
 
   //検索イベント関数
   function search_img() {
@@ -108,8 +129,9 @@ function App() {
         search_img={search_img}
         display_img={display_img}
         handleKeyDown={handleKeyDown}
+        childref_header={childref_header}
       />
-      <Main />
+      <Main childref_main={childref_main} />
     </>
   );
 }
