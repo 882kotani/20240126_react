@@ -1,16 +1,7 @@
 import React from "react";
 import "../App.css";
 
-// const InputArea = ({ inputHandler, inputValue, setTodosHandler }) => {
-
-const Header = ({ search_img, display_img, enter_submit }) => {
-  ////テキストエリアでエンターキー押下時
-  // form_textarea.addEventListener("keydown", function (e) {
-  //   if (e.key === "Enter") {
-  //     e.preventDefault();
-  //     search_img();
-  //   }
-  // });
+const Header = ({ search_img, display_img, handleKeyDown }) => {
   return (
     <div className="header">
       <div className="wrap_header">
@@ -22,7 +13,7 @@ const Header = ({ search_img, display_img, enter_submit }) => {
             type="text"
             name="src_text"
             autocomplete="off"
-            // onKeyDown={enter_submit}
+            onKeyDown={handleKeyDown}
           />
           <div class="wrap_header_radio-btn">
             <label>

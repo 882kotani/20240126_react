@@ -1,6 +1,4 @@
 import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
 import "./App.css";
 import "./reset.css";
 import Header from "./components/Header.jsx";
@@ -11,15 +9,9 @@ function App() {
   // const [todos, setTodos] = useState([]);
   // const [counter, setCounter] = useState(0);
 
-  // /*---------関数は外部化している（./js/main.js）---------*/
-  // /*---------検索イベント--------*/
-  // const form_textarea = document.querySelector(".header_textarea");
-  // // const form_btn = document.querySelector(".btn_form");
-  // //検索ボタン押下時
-  // form_btn.addEventListener("click", search_img);
-  //テキストエリアでエンターキー押下時
-  function enter_submit() {
-    if (e.key === "Enter") {
+  // エンターキーが押された時の処理（propsとしてHeaderに渡す。）
+  function handleKeyDown(e) {
+    if (e.keyCode === 13) {
       e.preventDefault();
       search_img();
     }
@@ -47,8 +39,6 @@ function App() {
 
     const text = document.querySelector(".src_before"); //「検索ワードを・・・」
     text.classList.toggle("after", true); //「検索ワードを・・・」を消す
-
-    console.log("searchボタンが押されました");
 
     const ACCESS_KEY = "6m-MrXZxcBmmmhhHQB92dmtYICSQ4OUruyA-wO3XEx4"; //API key env
     //API URL
@@ -117,7 +107,7 @@ function App() {
       <Header
         search_img={search_img}
         display_img={display_img}
-        enter_submit={enter_submit}
+        handleKeyDown={handleKeyDown}
       />
       <Main />
     </>
