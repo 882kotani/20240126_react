@@ -35,7 +35,7 @@
   height: 100vh;
   position: relative;
 } */
-/* .container header.blur { */
+
 .header.blur {
   background-color: rgba(214, 211, 211, 0.8);
   filter: blur(1px);

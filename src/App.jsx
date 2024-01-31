@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./App.css";
 import "./reset.css";
 import Header from "./components/Header.jsx";
@@ -17,38 +17,35 @@ function App() {
     }
   }
 
-  // // /*-------scrollしてブラーをかけるイベント--------*/
-  // const header = document.getElementById("box_header");
-  // const height_header = document.getElementById("box_main").clientHeight;
-  // window.addEventListener("scroll", function () {
-  //   // const scroll_top = window.pageYOffset;
-  //   // if (scroll_top <= height_header) {
-  //   //   header.classList.toggle("blur", false);
-  //   // } else if (height_header < scroll_top) {
-  //   //   header.classList.toggle("blur", true);
-  //   // }
-  // });
+  const [active, setActive] = useState(false);
 
-  // function blur_scroll() {
+  // // // /*-------scrollしてブラーをかけるイベント--------*/
   const childref_header = useRef(null);
   const childref_main = useRef(null);
 
-  const height_header = childref_header.clientHeight;
-  console.log(childref_header);
-  window.addEventListener("scroll", function () {
+  // useEffect(() => {
+  const handleScroll = () => {
     const scroll_top = window.pageYOffset;
-    // if (scroll_top <= height_header) {
-    if (scroll_top <= height_header) {
-      // childref_header.classList.toggle("blur", false);
-      childref_header.classList.add("blur");
-      console.log("scroll_top <= height_header");
-    } else if (height_header < scroll_top) {
-      // childref_main.classList.toggle("blur", true);
-      childref_header.classList.add("blur");
-      console.log("height_header < scroll_top");
+    const height_main = childref_header.current.clientHeight;
+
+    if (scroll_top <= height_main) {
+      setActive(false);
+      console.log("scroll_top < height_header");
+      // console.log(scroll_top);
+      // console.log(height_main);
+    } else {
+      setActive(true);
+      console.log("scroll_top => height_header");
     }
-  });
-  // }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+  // useEffectを一度だけ実行するようにするために、空の依存配列を追加します
 
   //検索イベント関数
   function search_img() {
@@ -130,6 +127,7 @@ function App() {
         display_img={display_img}
         handleKeyDown={handleKeyDown}
         childref_header={childref_header}
+        active={active}
       />
       <Main childref_main={childref_main} />
     </>
